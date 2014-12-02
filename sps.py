@@ -107,7 +107,10 @@ def main():
 
     verb_N [occurrence of sc1, occurrence of sc2, occurrence of sc3, ... occurrence of sc8
     verbs are read from a dictionary stored in the file verb_freq.txt
+<<<<<<< HEAD
     sc stands for semantic concept.
+=======
+>>>>>>> cc4ae858a08a75243b33b27eab8d226ee3affb9c
     '''
     for path in paths:#for each concepts. There are 8 concpets. these are indicated by values of the list paths.
         verbConceptFreq= verbAndConceptFreq(path)#this method returns verbs and their frequency in each concept. 
@@ -134,13 +137,21 @@ def main():
     '''
     for verb in verbConceptFreqTotal:
         verbConceptFreqTotal[verb] = [float(i)/sum(verbConceptFreqTotal[verb]) for i in verbConceptFreqTotal[verb]]#Normalize e.g. [1,2,3,4,5,6,7,8]/36
+<<<<<<< HEAD
         #print verb, verbConceptFreqTotal[verb], 
+=======
+        print verb, verbConceptFreqTotal[verb], 
+>>>>>>> cc4ae858a08a75243b33b27eab8d226ee3affb9c
         num = verbConceptFreqTotal[verb]#[1,2,3,4,5,6,7,8]/36
         denum = float(verbFreq[verb])/sum(int(i) for i in verbFreq.values())#P(verb_v])
         post[verb] = [i/denum for i in num] #computes conditonal probability for each concept given a verb i.e. P(concept_c | verb_v)  =  P(concept_c and verb_v)/P(verb_v)
         post[verb] = [i/sum(post[verb]) for i in post[verb]] #Normalize again.
+<<<<<<< HEAD
     for v in post:
         print v, post[verb]
+=======
+        print post[verb]
+>>>>>>> cc4ae858a08a75243b33b27eab8d226ee3affb9c
 
     #sps = selectionalPreferenceStrength(prior, post)
     '''
